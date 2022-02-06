@@ -7,7 +7,21 @@ class Cliente {
 class ContaCorrente {
     numeroConta;
     agencia;
-    saldo;
+    // #saldo = 0; é uma proposta de campo privado mais ainda não foi aceita
+    _saldo = 0;
+
+    sacar(valor){
+        if(this._saldo >= valor){
+            this._saldo -= valor;
+            return valor;
+        }
+    }
+    depositar(valor){
+        if(valor > 0){
+            this._saldo += valor;
+            // console.log(this.#saldo);
+        }
+    }
 }
 
 const cliente1 = new Cliente();
@@ -26,12 +40,9 @@ console.log(cliente2);
 const contaCorrenteRodolfo = new ContaCorrente();
 contaCorrenteRodolfo.agencia = 1001;
 contaCorrenteRodolfo.numeroConta = 12345;
-contaCorrenteRodolfo.saldo = 0;
-console.log(contaCorrenteRodolfo.saldo);
-contaCorrenteRodolfo.saldo = 100;
-console.log(contaCorrenteRodolfo.saldo);
-let valorSacado = 200;
-if(contaCorrenteRodolfo.saldo >= valorSacado){
-    contaCorrenteRodolfo.saldo = valorSacado;
-}
-console.log(contaCorrenteRodolfo.saldo);
+contaCorrenteRodolfo.depositar(100);
+contaCorrenteRodolfo.depositar(100);
+contaCorrenteRodolfo.depositar(100);
+contaCorrenteRodolfo.depositar(100);
+const valorSacado = contaCorrenteRodolfo.sacar(50);
+console.log(valorSacado);
