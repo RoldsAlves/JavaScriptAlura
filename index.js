@@ -10,7 +10,6 @@ cliente2.nome = "Alice";
 cliente2.cpf = 88822233309;
 
 console.log(cliente1);
-console.log(cliente2);
 
 const contaCorrenteRodolfo = new ContaCorrente();
 contaCorrenteRodolfo.agencia = 1001;
@@ -32,4 +31,4 @@ conta2.numeroConta = 67890;
 contaCorrenteRodolfo.transferir(200, conta2);
 
 console.log(contaCorrenteRodolfo);
-console.log(conta2);
+console.log(conta2.saldo);
