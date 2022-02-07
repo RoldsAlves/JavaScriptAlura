@@ -8,10 +8,11 @@ const cliente2 = new Cliente("Alice", 88822233309);
 
 console.log(cliente1);
 
-const conta1 = new Conta(0, cliente1, 1001);
+const conta1 = new ContaCorrente(cliente1, 1001);
 conta1.depositar(500);
 conta1.sacar(100);
 const conta2 = new ContaPoupanca(150, cliente2, 1001);
+conta2.sacar(50);
 
 console.log(conta1);
 console.log(conta2);
